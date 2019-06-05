@@ -34,30 +34,19 @@
 	<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 	</script>
 
-	<link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo.png">
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo.png"> -->
+	<link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo-2.png">
 
     <title>科羽学院</title>
-    <style>
-    	video::-internal-media-controls-download-button {
-    		display:none;
-		}
-
-			video::-webkit-media-controls-enclosure {
-			    overflow:hidden;
-			}
-
-			video::-webkit-media-controls-panel {
-			    width: calc(100% + 30px); 
-			}
-    </style>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
         <div class="navLeft">
-          <img src="http://www.keyucourse.com/logo/logo.png" style="width:30px;height:30px;"/>
-          <a href="http://www.keyucourse.com">科羽学院</a>
+          <!-- <img src="http://www.keyucourse.com/logo/logo.png" style="width:30px;height:30px;"/> -->
+          <a href="./index.html"><img src="http://www.keyucourse.com/logo/logo-w.png" style="width: 140px;"/></a>
+          <!-- <a href="http://www.keyucourse.com">科羽学院</a> -->
         </div>
         <div class="navRight">
             <button type="button" class="btn btn-outline-primary btn-sm loginBtn" data-toggle="modal"  onclick="wxLoginByQrCode()">登录</button>
@@ -93,7 +82,7 @@
 						</div>
 					</div>
 					<div class="col-sm-6 col-12 cardRight">
-						<button class="btn btn-primary kyBtn" id="payOrStartStudy" data-toggle="modal" data-target="#exampleModalCenter">开始学习</button>
+						<button class="btn btn-primary kyBtn" id="payOrStartStudy" data-toggle="modal" data-target="#exampleModalCenter">付款学习</button>
 					</div>
 				</div>
 			</section>
@@ -112,7 +101,7 @@
 				</ul>
 				<div class="video row">
 					<div class="play col-md-2">
-						<img src="../images/bf-1.png" alt="" style="cursor: pointer;" id="tryPlay">
+						<img src="../images/bf-1.png" alt="" data-toggle="modal" data-target="#videoPlayModal" id="tryPlay">
 						<div>观看试看视频</div>
 					</div>
 					<div class="videoDetail col-md-8">

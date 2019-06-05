@@ -60,7 +60,8 @@ function configKyUser(){
    if(kyUser!=''){
    	  $(".loginBtn").hide();
    		$("#alreadyLogin").show();
-   		$("#kyUser").html(kyUser.nickName);
+      // $("#kyUser").html('<img src="' + kyUser.headimgurl + '" style="width: 140px;">' + kyUser.nickName);
+   		$("#kyUser").html(kyUser.nickName + '<img src="' + kyUser.headimgurl + '" style="width: 45px;border-radius: 50%;">');
    }else{
    	  $(".loginBtn").show();
    		$("#alreadyLogin").hide();
