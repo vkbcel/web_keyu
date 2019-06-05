@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/user.css">
     <link rel="stylesheet" href="../css/init.css">
@@ -16,7 +16,7 @@
     </script>
     <link href="http://vjs.zencdn.net/4.10/video-js.css" rel="stylesheet">
     <script src="http://vjs.zencdn.net/4.10/video.js"></script>
-    
+
     <script src="http://www.keyucourse.com/js/config.js" >
     </script>
 
@@ -27,12 +27,12 @@
     </script>
     <script src="http://www.keyucourse.com/js/common.js" >
     </script>
-   
+
     <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-    <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo-2.png">
     <title>科羽学院</title>
 
 </head>
@@ -42,8 +42,7 @@
         <div class="container">
             <nav>
             <div class="navLeft">
-            <img src="http://www.keyucourse.com/logo/logo.png" style="width:30px;height:30px;"/>
-            <a href="http://www.keyucourse.com">科羽学院</a>
+            <a href="./index.html"><img src="http://www.keyucourse.com/logo/logo-w.png"/></a>
             </div>
             <div class="navRight">
             <button type="button" class="btn btn-outline-primary btn-sm loginBtn" data-toggle="modal"  onclick="wxLoginByQrCode()">登录</button>
@@ -77,7 +76,7 @@
             <div class="module">
                 <div class="moduleTitle"><span>我的课程 </span></div>
                 <div class="moudleContent" >
-                    
+
                     <div class="row" id="myCourseList">
                         <div class="col-md-4 col-sm-6">
                             <div class="itemContainer">
@@ -103,22 +102,22 @@
                             </div>
                         </div>
                     </div>
-                  
+
                 </div>
             </div>
             <div class="module">
                 <div class="moduleTitle"><span>其他推荐</span></div>
                 <div class="moudleContent">
                     <div class="row" id="recommandCourseList">
-                        
-                        
-                       
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </main>
-   
+
 </body>
 
 </html>
@@ -136,20 +135,20 @@
     }
 
     function configPersonCourseUI(){
-        var personCourseList = getPersonCourseList(); 
+        var personCourseList = getPersonCourseList();
         if(personCourseList == '' || personCourseList.length==0){
            $(".userCard p").hide();
            $(".userCard userCardBtn").hide();
-        }       
+        }
         var html = '';
         for(var i=0; i<personCourseList.length; i++){
-            
+
             var cs = personCourseList[i];
             if(i==0){
                $(".userCard p").html(cs.name);
             }
-            
-            
+
+
             html += '<div class="col-md-4 col-sm-6">'+
                         '<div class="itemContainer">'+
                             '<div class="itemImage">'+
@@ -205,13 +204,13 @@
                             '</div>'+
                         '</div>'+
                     '</div>';
-                    
+
         }
         $("#recommandCourseList").html(html);
     }
 
     function getCommandCourseList(){
-        
+
         var commandCourseList = '';
         $.ajax({
           type : "POST",

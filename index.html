@@ -30,8 +30,8 @@
     <script src="http://www.keyucourse.com/js/wx-app.js?1" >
     </script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>    
-    <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo.png">
+    </script>
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo-2.png">
 
     <title>科羽学院</title>
 </head>
@@ -41,8 +41,7 @@
         <div class="container">
             <nav>
                 <div class="navLeft">
-                    <img src="http://www.keyucourse.com/logo/logo.png" style="width:30px;height:30px;"/>
-                    <a href="./index.html">科羽学院</a>
+                    <a href="./index.html"><img src="http://www.keyucourse.com/logo/logo-l.png"/></a>
                 </div>
                 <div class="navRight">
                     <button type="button" class="btn btn-outline-primary btn-sm loginBtn" data-toggle="modal"  onclick="wxLoginByQrCode()">登录</button>
@@ -124,11 +123,11 @@
                 </div>
             </div>
             <div id="categoryList">
-                
-            
+
+
             </div>
             </div>
-            
+
         </div>
     </main>
     <footer>
@@ -178,12 +177,12 @@
             </div>
         </div>
      </div>
-    
+
      <div class="modal" id="kefuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                
+
                 <h4 class="modal-title" id="myModalLabel">客服微信</h4>
             </div>
             <div class="modal-body" style="text-align: center;">
@@ -191,7 +190,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-               
+
             </div>
         </div><!-- /.modal-content -->
         </div><!-- /.modal -->
@@ -200,12 +199,12 @@
 	 <div class="kefu" onclick="showKefu()">
 			<img src="http://www.keyucourse.com/images/kefu.png" >
 	 </div>
-    
+
 </body>
 
 </html>
 <script>
-    
+
     $(function(){
 
        var bannerList = configBannerList();
@@ -232,9 +231,9 @@
        configIndexCategoryListUI();
        //微信分享
        configWxShare();
-      
+
     });
-    
+
     function configBannerList(){
         var bannerList = "";
         $.ajax({
@@ -260,7 +259,7 @@
             for(var i=0; i<categoryList.length; i++){
                 var category = categoryList[i];
                 html+=configCategoryHtml(category);
-                
+
             }
         }
         $("#categoryList").html(html);
@@ -275,23 +274,23 @@
           dataType: "json",
           data :{} ,
           success : function(data) {
-             
+
                categoryList = data;
-             
+
           }
         });
         return categoryList;
     }
-   
+
 
     function configCategoryHtml(category){
         var html ='';
         var courseList = categoryCourseList(category.id);
-        
+
         if(category.name=='精品课程'){
-            
+
             var t1= '<div class="moduleTitle"><span>精品课程</span></div>';
-            
+
             var t3 = ''
             for(var i=0; i<courseList.length; i++){
                 var course = courseList[i];
@@ -320,7 +319,7 @@
             var t5= '<div class="moudleContent">'+t4+'</div>';
 
             html +='<div class="module">'+t1+t5+'</div>';
-            
+
         }else if(category.name=='近期优惠'){
             var t3 = '';
             for(var i=0; i<courseList.length; i++){
@@ -362,9 +361,9 @@
           dataType: "json",
           data :{"categoryId":id} ,
           success : function(data) {
-            
+
             categoryCourseList = data;
-             
+
           }
         });
         return categoryCourseList;

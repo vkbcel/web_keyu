@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
+
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/course.css">
   <link rel="stylesheet" href="../css/init.css">
 	<link href="//vjs.zencdn.net/4.10/video-js.css" rel="stylesheet">
 	<script src="//vjs.zencdn.net/4.10/video.js"></script>
-	<!-- <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo.png"> -->
   <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo-2.png">
-	
+
 	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
 
 	</script>
@@ -48,9 +47,7 @@
     <div class="container">
       <nav>
         <div class="navLeft">
-          <!-- <img src="http://www.keyucourse.com/logo/logo.png" style="width:30px;height:30px;"/>
-          <a href="http://www.keyucourse.com">科羽学院</a> -->
-          <a href="./index.html"><img src="http://www.keyucourse.com/logo/logo-w.png" style="width: 140px;"/></a>
+          <a href="./index.html"><img src="http://www.keyucourse.com/logo/logo-w.png"/></a>
         </div>
         <div class="navRight">
             <button type="button" class="btn btn-outline-primary btn-sm loginBtn" data-toggle="modal"  onclick="wxLoginByQrCode()">登录</button>
@@ -82,7 +79,7 @@
 							</div>
 						</div>
 						<div class="infos" id="infos">
-							
+
 						</div>
 					</div>
 					<div class="col-sm-6 col-12 cardRight">
@@ -111,7 +108,7 @@
 					<div class="videoDetail col-md-8">
 						<div class="name courseName"></div>
 						<div class="desc" id="details">
-							
+
 						</div>
 					</div>
 					<div class="expert col-md-2">
@@ -120,14 +117,14 @@
 						<div class="expertTitle">金牌讲师</div>
 					</div>
 				</div>
-				
+
 			</section>
 			<section class="courseList" id="courseList">
-				
+
 			</section>
-			
+
 		</div>
-		
+
 	</main>
 
 	<div class="modal fade" id="videoPlayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -156,14 +153,14 @@
 															<img src="../images/bf-xaod.png" alt="" style="cursor: pointer;" onclick="playNextCourseFun()">
 															<span id="nextSectionTitle"></span>
 													</div>
-													
+
 											</div>
 									</div>
 							</div>
 					</div>
 			</div>
 	</div>
-	
+
 	<!-- 登陆 -->
 	<div class="modal fade" id="exampleLoginCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -194,7 +191,7 @@
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                
+
                 <h4 class="modal-title" id="myModalLabel">课程:<span class="courseName"></span><span class="price" style="color:red;"></span></h4>
             </div>
             <div class="modal-body" style="text-align: center;overflow: hidden;">
@@ -209,23 +206,23 @@
             </div>
             <div class="modal-footer">
               <span id="paySuccess" style="color:#2274C4;"></span>  <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-               
+
             </div>
         </div><!-- /.modal-content -->
         </div><!-- /.modal -->
     </div>
-	
+
 </body>
 </html>
 <script>
-	
+
 	$(function(){
 		var course = getCourseDetail();
 		configCourseDetailUI(course);
 		configCourseItemUI(kyChapterList);
 		var title = course.name;
 		var imgUrl = qiniuPicBuckertUrl+'/'+course.pic;
-		var description = course.brief; 
+		var description = course.brief;
 		configWxShare(title,imgUrl,description);
 	});
 	function configCourseItemUI(kyChapterList){

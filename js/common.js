@@ -30,7 +30,7 @@ function getUuid() {
 
 var kyUser = '';
 function getKyUser(){
-	
+
   if(kyUser!=''){
     return kyUser;
   }
@@ -55,18 +55,17 @@ $(function(){
 })
 
 function configKyUser(){
-  
+
    kyUser = getKyUser();
    if(kyUser!=''){
    	  $(".loginBtn").hide();
    		$("#alreadyLogin").show();
-      // $("#kyUser").html('<img src="' + kyUser.headimgurl + '" style="width: 140px;">' + kyUser.nickName);
-   		$("#kyUser").html(kyUser.nickName + '<img src="' + kyUser.headimgurl + '" style="width: 45px;border-radius: 50%;">');
+   		$("#kyUser").html(kyUser.nickName + '<img src="' + kyUser.headimgurl + '">');
    }else{
    	  $(".loginBtn").show();
    		$("#alreadyLogin").hide();
    }
-   
+
 }
 
 
@@ -75,7 +74,7 @@ function wxLoginByQrCode(){
   var uuid = getUuid();
   //$("#wxLoginQrCode").src=wxLoginQrCodeUrl+"?uuid="+uuid;
   $("#wxLoginQrCode").attr("src",wxLoginQrCodeUrl+"?uuid="+uuid);
-  
+
   $("#exampleLoginCenter").modal("show");
   t = setInterval("autoLogin('"+uuid+"')", 1000);
 }
@@ -109,11 +108,11 @@ function autoLogin(uuid){
           data :{"uuid":uuid} ,
           success : function(data) {
              if(data.result=="success"){
-               
+
                 $("#agreement").html("登录成功");
                 $("#exampleLoginCenter").modal("hide");
                 clearInterval(t);
-                configKyUser();         
+                configKyUser();
              }
           }
     });

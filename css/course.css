@@ -26,6 +26,10 @@ nav {
 	color: inherit;
 }
 
+.navLeft img {
+    width: 140px;
+}
+
 .loginBtn {
   background: #ffffff;
   display: none;
@@ -379,4 +383,31 @@ footer {
 
 .sectionItem:not(:last-child){
 	border-bottom: 1px solid #F0F0F0;
+}
+
+.dropdown-toggle img {
+  width: 45px;
+  border-radius: 50%;
+  margin-left: 5px
+}
+
+@media screen and (max-width:768px) {
+    .couponItem {
+        flex-direction: column;
+    }
+    .couponItem .couponInfo {
+        margin-left: 0;
+    }
+    .navLeft img {
+        width: 78px;
+    }
+    .btn.btn-sm {
+      padding: 0.1em 1em;
+      font-size: 12px;
+    }
+    .dropdown-toggle img {
+      width: 30px;
+      border-radius: 50%;
+      margin-left: 5px
+    }
 }
