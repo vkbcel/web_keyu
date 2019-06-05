@@ -187,11 +187,12 @@ function configCourseVideoModal(course){
 	
 }
 function playNextCourseFun(){
+	//首先判断视频是否是付费
+	var isFree = section.isFree;
 	var videoId = section.videoId;
 	var video = getVideoDetail(videoId);
 	$("#chapter").html(kyChapter.name);
 	$(".sectionTitle").html(section.name);
-
 	//$("#playVideoSource").attr("src",video.mp4Name);
 	document.getElementById("example_video_1").src=video.mp4Name;
  	document.getElementById("example_video_1").play();
