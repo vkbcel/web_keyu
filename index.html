@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://www.keyucourse.com/css/index.css">
+
+    <link rel="stylesheet" href="http://www.keyucourse.com/css/init.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
+
+    <script src="http://www.keyucourse.com/js/common.js" >
+    </script>
+    <script src="http://www.keyucourse.com/js/config.js" >
+    </script>
+
+	<script src="http://www.keyucourse.com/js/jquery-3.3.1.min.js" >
+    </script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="http://www.keyucourse.com/js/jweixin-1.4.0.js" >
+    </script>
+    <script src="http://www.keyucourse.com/js/wx-app.js?1" >
+    </script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>    
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo.png">
+
+    <title>科羽学院</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="navLeft">
+                    <img src="http://www.keyucourse.com/logo/logo.png" style="width:30px;height:30px;"/>
+                    <a href="./index.html">科羽学院</a>
+                </div>
+                <div class="navRight">
+                    <button type="button" class="btn btn-outline-primary btn-sm loginBtn" data-toggle="modal"  onclick="wxLoginByQrCode()">登录</button>
+                    <div class="dropdown" id="alreadyLogin">
+                        <div class="dropdown-toggle" data-toggle="dropdown" id="kyUser">
+                            用户XXX
+                        </div>
+                        <div class="dropdown-menu">
+                            <!-- <a class="dropdown-item" href="#">退出</a> -->
+                            <a class="dropdown-item" href="./user.html">我的课程</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="http://www.keyucourse.com/images/banner.png">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="http://www.keyucourse.com/images/banner.png">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="http://www.keyucourse.com/images/banner.png">
+                    </div>
+                </div>
+
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="module">
+                <div class="moduleTitle"><span>平台优势</span></div>
+                <div class="moudleContent">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-6">
+                            <div class="platformItem">
+                                <img src="http://www.keyucourse.com/images/qrcode.png" alt="">
+                                <div>直接添加讲师微信</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6">
+                            <div class="platformItem">
+                                <img src="http://www.keyucourse.com/images/zhibo.png" alt="">
+                                <div>每周定期线上直播（问题解答）</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6">
+                            <div class="platformItem">
+                                <img src="http://www.keyucourse.com/images/yuyin.png" alt="">
+                                <div>就业老师10小时语音指导</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6">
+                            <div class="platformItem">
+                                <img src="http://www.keyucourse.com/images/wenda.png" alt="">
+                                <div>助教100问，随问随答</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="categoryList">
+                
+            
+            </div>
+            </div>
+            
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <p>粤ICP备18126566号</p>
+                    <p class="copyright">Copyright © 2019 ForChange 深圳科羽科技有限公司</p>
+                    <p>地址：广东省深圳市龙岗区龙岗街道龙岗大道金地龙城中央小区5号楼2303室</p>
+                    <p>电话：15738630327 13651359523</p>
+                    <p>电子邮箱：keyukeji2018@126.com</p>
+                </div>
+                <div class="col-md-6 col-sm-12 footerCode">
+                    <div class="code">
+                        <img src="http://www.keyucourse.com/qrcode/qrcode.jpg" alt="">
+                        <p>关注公众号</p>
+                    </div>
+                    <div class="code">
+                        <img src="http://www.keyucourse.com/qrcode/xww.jpg" alt="">
+                        <p>联系人</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 登陆 -->
+    <div class="modal fade" id="exampleLoginCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">微信扫码登录</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="loginCode">
+                        <img id="wxLoginQrCode" src="http://www.keyucourse.com/images/mobile_code.png" alt="">
+                        <div class="agreement" id="agreement">
+                            <img  src="" alt="">
+                            <span>
+                            已阅读并同意
+                            </span>
+                            <a href="">
+                            科宇服务使用协议》
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    
+     <div class="modal" id="kefuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                
+                <h4 class="modal-title" id="myModalLabel">客服微信</h4>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <img src="http://www.keyucourse.com/qrcode/xww.jpg"/>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+               
+            </div>
+        </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+	 <div class="kefu" onclick="showKefu()">
+			<img src="http://www.keyucourse.com/images/kefu.png" >
+	 </div>
+    
+</body>
+
+</html>
+<script>
+    
+    $(function(){
+
+       var bannerList = configBannerList();
+       var indicatorsHtml = "";
+       var innerHtml = "";
+       for(var i=0; i<bannerList.length; i++){
+            var banner = bannerList[i];
+            if(i==0){
+                indicatorsHtml+='<li data-target="#demo" data-slide-to="'+i+'" class="active"></li>';
+                innerHtml +='<div class="carousel-item active">'+
+                        '<img style="min-width:345px;min-height:133px;max-width:2200px;max-height:851px;" src="'+banner.pic+'" onclick="goToUrl(\''+banner.url+'\')">'+
+                        '</div>';
+            }else{
+                indicatorsHtml+='<li data-target="#demo" data-slide-to="'+i+'"></li>';
+                //innerHtml +='';
+                innerHtml +='<div class="carousel-item">'+
+                        '<img  src="'+banner.pic+'" onclick="goToUrl(\''+banner.url+'\')">'+
+                        '</div>';
+            }
+       }
+       $(".carousel-indicators").html(indicatorsHtml);
+       $(".carousel-inner").html(innerHtml);
+
+       configIndexCategoryListUI();
+       //微信分享
+       configWxShare();
+      
+    });
+    
+    function configBannerList(){
+        var bannerList = "";
+        $.ajax({
+              type : "POST",
+              url :bannerListUrl,
+              async: false,
+              dataType: "json",
+              data :{} ,
+              success : function(data) {
+                 bannerList = data;
+              }
+        });
+        return bannerList;
+    }
+    function goToUrl(url){
+        window.location.href="http://"+url;
+    }
+
+    function configIndexCategoryListUI(){
+        var html = '';
+        var categoryList = getCategoryList();
+        if(categoryList!=''){
+            for(var i=0; i<categoryList.length; i++){
+                var category = categoryList[i];
+                html+=configCategoryHtml(category);
+                
+            }
+        }
+        $("#categoryList").html(html);
+
+    }
+    function getCategoryList(){
+        var categoryList = '';
+        $.ajax({
+          type : "POST",
+          url :categoryListUrl,
+          async: false,
+          dataType: "json",
+          data :{} ,
+          success : function(data) {
+             
+               categoryList = data;
+             
+          }
+        });
+        return categoryList;
+    }
+   
+
+    function configCategoryHtml(category){
+        var html ='';
+        var courseList = categoryCourseList(category.id);
+        
+        if(category.name=='精品课程'){
+            
+            var t1= '<div class="moduleTitle"><span>精品课程</span></div>';
+            
+            var t3 = ''
+            for(var i=0; i<courseList.length; i++){
+                var course = courseList[i];
+                var d = '<div class="infoLine">'+
+                        '<div class="name">'+course.name+'</div>'+
+                        '<button class="btn btn-primary kyBtn" onclick="gotoCourse('+course.id+')">报名</button>'+
+                        '</div>'+
+                            '<div class="sigIn">'+
+                                '已报名人数：'+course.studentNum+
+                            '</div>'+
+                            '<div class="infoPrice">'+
+                                '<span class="price">￥'+course.price+'</span>'+
+                                '<span class="original">￥'+course.originalPrice+'</span>'+
+                                '<span class="coupon">立减'+(parseInt(course.originalPrice)-parseInt(course.price))+'</span>'+
+                            '</div>';
+                var c = '<div class="itemInfo">'+d+'</div>';
+                var b = '<div class="itemImage">'+
+                            '<img src="'+qiniuPicBuckertUrl+'//'+course.pic+'" alt="">'+
+
+                        '</div>';
+                var a = '<div class="itemContainer">'+b+c+'</div>';
+                t3 += '<div class="col-md-4 col-sm-6">'+a+'</div>';
+            }
+            var t4= '<div  class="row">'+t3+'</div>'
+
+            var t5= '<div class="moudleContent">'+t4+'</div>';
+
+            html +='<div class="module">'+t1+t5+'</div>';
+            
+        }else if(category.name=='近期优惠'){
+            var t3 = '';
+            for(var i=0; i<courseList.length; i++){
+                var course = courseList[i];
+                var resumeList = course.resume.split(',');
+                var resumeLiHtml = '';
+                for(var j=0; j<resumeList.length; j++){
+                    resumeLiHtml+='<li>·'+resumeList[j]+'</li>';
+                }
+                var resumeULHtml = '<ul>'+resumeLiHtml+'</ul>';
+                var a= '<div class="image">'+
+                            '<img style="max-width:525px;max-height:285px;min-width:345px;min-height:187px;" src="'+qiniuPicBuckertUrl+'//'+course.pic+'" alt="">'+
+                        '</div>'+
+                        '<div class="couponInfo">'+
+                            '<div class="infoLeft">'+
+                                '<div class="name">'+course.name+'</div>'+
+                                    resumeULHtml+
+                            '</div>'+
+                            '<div class="infoRight">'+
+                                '<div class="price">￥'+course.price+' </div>'+
+                                '<div class="originalPrice">￥'+course.originalPrice+' </div>'+
+                                '<a href="./course.html?id='+course.id+'" class="btn btn-primary kyBtn">报名</a>'+
+                           ' </div>'+
+                        '</div>';
+                t3 += '<div class="couponItem">'+a+'</div>';
+            }
+            var t1= '<div class="moduleTitle"><span>近期优惠</span></div>';
+            var t5= '<div class="moudleContent">'+t3+'</div>';
+            html +='<div class="module">'+t1+t5+'</div>';
+        }
+        return html;
+    }
+    function categoryCourseList(id){
+        var categoryCourseList = '';
+        $.ajax({
+          type : "POST",
+          url :categoryCourseUrl,
+          async: false,
+          dataType: "json",
+          data :{"categoryId":id} ,
+          success : function(data) {
+            
+            categoryCourseList = data;
+             
+          }
+        });
+        return categoryCourseList;
+    }
+
+    function configWxShare(){
+        var currentUrl = decodeURIComponent(location.href.split('#')[0]);
+            //var url = host+"/ky_api/wx/get_signature";
+        //currentUrl = wxAuthCurrentUrl+"?currentUrl="+currentUrl;
+        console.log(wxGetSignatureUrl);
+        //currentUrl = encodeURIComponent(currentUrl);
+        $.ajax({
+          type : "POST",
+          url :wxGetSignatureUrl,
+          async: false,
+          dataType: "json",
+          data :{"currentUrl":currentUrl} ,
+          success : function(data) {
+             if(data.result=="success"){
+                var data = data.data;
+                console.log(data.appId);
+                console.log(data.signature);
+                console.log(data.timestamp);
+                console.log(data.nonceStr);
+                console.log(data.jsapi_ticket);
+                console.log(data.url);
+                var appId = data.appId;
+                var signature = data.signature;
+                var timestamp = data.timestamp;
+                var nonceStr = data.nonceStr;
+
+                var jsapi_ticket = data.jsapi_ticket;
+
+                var imgUrl = "http://www.keyucourse.com/logo/logo.png";
+
+                //分享朋友圈
+                var title = "科羽学院-全国大数据、人工智能在线教育平台";
+
+
+                wxShareFriendsCircle(appId, timestamp, nonceStr, signature, currentUrl, title, imgUrl);
+                //发给朋友
+                var title = "科羽学院";
+                var description = "全国大数据、人工智能在线教育平台";
+                wxShareFriends(appId, timestamp, nonceStr, signature, currentUrl, title,imgUrl, description);
+             }
+          }
+        });
+    }
+
+    function gotoCourse(id){
+        window.location.href="http://www.keyucourse.com/course.html?id="+id;
+    }
+    function showKefu(){
+        $("#kefuModal").modal("show");
+    }
+</script>

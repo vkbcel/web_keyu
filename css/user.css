@@ -1,0 +1,186 @@
+body{
+	background: url(../images/user_top.png) no-repeat;
+	background-size: 100% 300px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    color: #ffffff;
+}
+
+.navLeft {
+    display: flex;
+    align-items: center;
+}
+
+.navLeft .square {
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    margin-right: 10px;
+}
+.navLeft a{
+	color: inherit;
+}
+
+.loginBtn {
+    background: #ffffff;
+    display: none;
+}
+
+.userCard {
+    position: relative;
+    width: 90%;
+    margin: 75px auto 0;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 6px;
+    padding: 40px 20px;
+	background: #FFFFFF;
+}
+
+.userCard .userHeadImage {
+    position: absolute;
+    width: 60px;
+    left: 0;
+    right: 0;
+    top: -30px;
+    margin: auto;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.userCard .userHeadImage img {
+    width: 100%;
+}
+
+.userCard .userName {
+    font-size: 18px;
+}
+
+hr {
+    color: #F0F0F0;
+}
+
+.userCard hr+p {
+    margin-top: 30px;
+}
+
+.module {
+    margin-bottom: 30px;
+}
+
+.moduleTitle {
+    padding-top: 15px;
+    margin-top: 30px;
+}
+
+.moduleTitle span {
+    position: relative;
+}
+
+.moudleContent {
+    margin-top: 20px;
+}
+
+.itemContainer {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    margin-bottom: 15px;
+}
+
+.itemInfo {
+    padding: 15px;
+}
+
+.itemInfo .sigIn{
+	color: #808080;
+	font-size: 14px;
+}
+
+.itemImage {
+    position: relative;
+}
+
+.itemImage img {
+    width: 100%;
+}
+
+.itemImage .studyProcess {
+    position: absolute;;
+    width: 90%;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.studyProcess .progressText{
+	width: 100;
+	height: 0;
+	position: relative;
+}
+
+.studyProcess .progressText span{
+	position: absolute;
+	left: 20%;
+	top: -30px;
+	padding: 3px 10px;
+	background: #F33CAB;
+	border-radius: 20px;
+	font-size: 12px;
+	line-height: 1;
+	color: #FFFFFF;	
+}
+
+.studyProcess .progress{
+	height: 4px;
+	background: rgba(255,255,255,.35);
+}
+
+.studyProcess .progress .progress-bar{
+	background: #FFFFFF;
+}
+
+.itemInfo .infoLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.itemInfo .infoPrice {
+    display: flex;
+    align-items: center;
+}
+
+.infoPrice .price {
+    color: #FF3232;
+    margin-right: 25px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.infoPrice .original {
+    font-size: 14px;
+    color: #808080;
+    text-decoration: line-through;
+    margin-right: 34px;
+}
+
+.infoPrice .coupon {
+    background-color: #FFD4D5;
+    color: #FF3232;
+    font-size: 12px;
+    padding: 2px 5px;
+}
+
+.itemInfo .desc {
+    font-size: 12px;
+}
+
+
+/*  */

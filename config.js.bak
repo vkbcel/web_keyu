@@ -1,0 +1,17 @@
+var host = 'http://localhost';
+//授权接口
+var wxAuthUrl = host+"/ky_api/wx/wx_auto_url";
+//朋友圈分享获取ginature接口
+var wxGetSignatureUrl = host+"/ky_api/wx/get_signature";
+//微信支付接口
+var wxPayOrderUrl = host+"/ky_api/wx/pay";
+//微信授权回调接口
+var wxAuthCallBackUrl = host+"/ky_api/wx/auth_call_back";
+//微信判断当前页面是否微信授权登录
+var wxGetSessionKyUserUrl = host+"/ky_api/ky_user/get_session_user";
+//微信确认登录
+var wxConfirmLoginUrl = host+"/ky_api/ky_user/confirm_login";
+//微信登录二维码地址
+var wxLoginQrCodeUrl = host+"/ky_api/qr_code/wx_login";
+//查询微信是否登录
+var wxAutoLoginByUuidUrl = host+"/ky_api/ky_user/auto_login_by_uuid";

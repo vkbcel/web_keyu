@@ -1,0 +1,382 @@
+body{
+	background: url(../images/BG-1.png) no-repeat;
+	background-size: 100% 468px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  color: #ffffff;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+.navLeft .square {
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  margin-right: 10px;
+}
+
+.navLeft a{
+	color: inherit;
+}
+
+.loginBtn {
+  background: #ffffff;
+  display: none;
+}
+
+.dropdown {
+  /* display: none */
+}
+header .jumbotron{
+	text-align: center;
+	color: #FFFFFF;
+}
+.courseCard {
+    margin: 30px 5%;
+    background-color: #ffffff;
+    box-shadow: 0px 0 10px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+		text-align: center;
+}
+.courseCard .row{
+	align-items: center;
+}
+
+.cardLeft .price {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cardLeft .price .tip {
+    background: linear-gradient(90deg, rgba(231, 57, 107, 1), rgba(235, 129, 49, 1));
+		border: none;
+}
+
+.cardLeft .price .payPrice {
+    font-weight: 500;
+    color: #FF3232;
+    margin-right: 20px;
+}
+
+.cardLeft .price .originalPrice {
+    color: #808080;
+    font-size: 16px;
+    text-decoration: line-through;
+}
+
+.cardLeft .infos {
+    color: #808080;
+    font-size: 14px;
+		text-align: left;
+}
+
+.cardLeft .infos span:not(:last-child)::after {
+    content: '·';
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cardRight {
+    text-align: center;
+		padding: 15px;
+}
+
+.courseDetail .tab {
+    display: flex;
+}
+
+.tab li {
+    position: relative;
+    padding: 20px 0;
+    color: #808080;
+}
+
+.tab li a{
+	color: inherit;
+}
+
+.tab li:not(:last-child) {
+    margin-right: 40px;
+}
+
+.tab li.active {
+    color: #000000;
+}
+
+.tab li.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 40px;
+    margin: auto;
+    height: 4px;
+    background-color: #4877FB;
+}
+
+.courseDetail .video {
+    background-image: url('../images/bf-bg.png');
+    background-size: 100% 100%;
+    border-radius: 18px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+.video {
+    margin-top: 4%;
+}
+
+.video .play {
+    text-align: center;
+}
+
+.video .videoDetail{
+	padding: 15px 0;
+}
+
+.video .videoDetail .desc {
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.video .expert div {
+    font-size: 18px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.job {
+    margin-top: 4%;
+}
+
+.job h3 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.itemContainer {
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+		text-align: center;;
+		margin-bottom: 15px;
+}
+
+.itemContainer h4 {
+    font-size: 24px;
+    color: #4877FB;
+    margin-top: 46px;
+}
+
+.itemContainer p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.knowledges{
+	margin-top: 30px;
+	padding: 60px 40px;
+	background-image: url('../images/konwledge.png');
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.knowledges .h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.knowledges p {
+    font-size: 18px;
+}
+
+.knowledges dl {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.knowledges dl dt {
+    font-weight: 600;
+}
+
+.feedback {
+    margin-top: 30px;
+    padding: 30px 0;
+		background-color: #F4F4F4;
+}
+
+.feedback .feedbackContent {
+    background: linear-gradient(52deg, rgba(153, 34, 152, 1), rgba(32, 173, 158, 1));
+    background-size: 60% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px 0;
+}
+
+.feedback .title {
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.feedback .titleDesc {
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.feedback .itemContainer {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 43px;
+}
+
+.feedback .itemContainer .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.feedback .itemContainer .user .head {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #DA3C31;
+    margin-right: 20px;
+}
+
+.feedback .itemContainer .user .name {
+    font-size: 20px;
+    color: #2F2F2F;
+}
+
+.feedback .itemContainer .user .company {
+    font-size: 14px;
+    color: #727272;
+}
+
+.feedback .itemContainer .text {
+    color: #494949;
+    font-size: 14px;
+}
+
+.feedback .slide {
+    text-align: center;
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    padding: 2% 0;
+}
+
+/*  */
+.playerToast {
+    background: #313131;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 14px;
+    margin: -1.1rem;
+}
+
+.playerToast .top,
+.playerToast .bottom {
+    padding: 30px 20px;
+}
+
+.top .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.course {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.course .name {
+    display: flex;
+    align-items: center;
+}
+
+.next {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.next img {
+    margin: 0 20px;
+}
+
+.courseList{
+	margin-top: 30px;
+}
+
+.courseItem{
+	border-bottom: 1px solid #F0F0F0;
+	margin-bottom: 15px;
+}
+
+.sectionTitle{
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+}
+
+.sectionTitle::before{
+	content: '';
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../images/ml-zj.png) no-repeat;
+	background-size: 100% 100%;
+	margin-right: 10px;
+}
+
+.sectionDesc, .sectionList{
+	margin: 0 26px;
+	font-size: 14px;
+}
+
+.sectionItem{
+	display: flex;
+	align-items: center;
+	padding: 15px 0;
+}
+
+.sectionItemLeft{
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.sectionItemRight{
+	font-size: 16px;
+	color: #ff5544;
+}
+
+.sectionItem img{
+	margin-right: 10px;
+}
+
+.sectionItem:not(:last-child){
+	border-bottom: 1px solid #F0F0F0;
+}

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://www.keyucourse.com/css/index.css">
+
+    <link rel="stylesheet" href="http://www.keyucourse.com/css/init.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+
+
+    <script src="http://www.keyucourse.com/js/common.js" >
+    </script>
+    <script src="http://www.keyucourse.com/js/config.js" >
+    </script>
+	<script src="http://www.keyucourse.com/js/jquery-3.3.1.min.js" >
+    </script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>    
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo.png">
+
+    <title>科羽学院</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="navLeft">
+                    <span class="square"></span>
+                    <a href="./index.html">科羽学院</a>
+                </div>
+                <div class="navRight">
+                    <button type="button" class="btn btn-outline-primary btn-sm loginBtn" data-toggle="modal"  onclick="wxLoginByQrCode()">登录</button>
+                    <div class="dropdown" id="alreadyLogin">
+                        <div class="dropdown-toggle" data-toggle="dropdown" id="kyUser">
+                            用户XXX
+                        </div>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">退出</a>
+                            <a class="dropdown-item" href="#">交易记录</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+
+                <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="http://www.keyucourse.com/images/banner.png">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="http://www.keyucourse.com/images/banner.png">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="http://www.keyucourse.com/images/banner.png">
+                    </div>
+                </div>
+
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="module">
+                <div class="moduleTitle"><span>平台优势</span></div>
+                <div class="moudleContent">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-6">
+                            <div class="platformItem">
+                                <img src="http://www.keyucourse.com/images/1.png" alt="">
+                                <div>直接添加讲师微信</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6">
+                            <div class="platformItem">
+                                <img src="http://www.keyucourse.com/images/1.png" alt="">
+                                <div>每周定期线上直播（问题解答）</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6">
+                            <div class="platformItem">
+                                <img src="http://www.keyucourse.com/images/1.png" alt="">
+                                <div>就业老师10小时语音指导</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-6">
+                            <div class="platformItem">
+                                <img src="http://www.keyucourse.com/images/1.png" alt="">
+                                <div>助教100问，随问随答</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="moduleTitle"><span>精品课程</span></div>
+                <div class="moudleContent">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="itemContainer">
+                                <div class="itemImage">
+                                    <img src="http://www.keyucourse.com/images/1.png" alt="">
+                                </div>
+                                <div class="itemInfo">
+                                    <div class="infoLine">
+                                        <div class="name">Git与项目实战</div>
+                                        <button class="btn btn-primary kyBtn">报名</button>
+                                    </div>
+																		<div class="sigIn">
+																			已报名人数：2199
+																		</div>
+                                    <div class="infoPrice">
+                                        <span class="price">￥8.8</span>
+                                        <span class="original">￥350.00</span>
+                                        <span class="coupon">立减100</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="itemContainer">
+                                <div class="itemImage">
+                                    <img src="http://www.keyucourse.com/images/2.png" alt="">
+                                </div>
+                                <div class="itemInfo">
+                                    <div class="infoLine">
+                                        <div class="name">数据科学</div>
+                                        <button class="btn btn-primary kyBtn">报名</button>
+                                    </div>
+																		<div class="sigIn">
+																			已报名人数：2199
+																		</div>
+                                    <div class="infoPrice">
+                                        <span class="price">￥8.8</span>
+                                        <span class="original">￥350.00</span>
+                                        <span class="coupon">立减100</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="itemContainer">
+                                <div class="itemImage">
+                                    <img src="http://www.keyucourse.com/images/3.png" alt="">
+                                </div>
+                                <div class="itemInfo">
+                                    <div class="infoLine">
+                                        <div class="name">人工智能应用</div>
+                                        <button class="btn btn-primary kyBtn">报名</button>
+                                    </div>
+																		<div class="sigIn">
+																			已报名人数：2199
+																		</div>
+                                    <div class="infoPrice">
+                                        <span class="price">￥8.8</span>
+                                        <span class="original">￥350.00</span>
+                                        <span class="coupon">立减100</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="module">
+                <div class="moduleTitle"><span>近期优惠</span></div>
+                <div class="moudleContent">
+                    <div class="couponItem">
+                        <div class="image">
+                            <img src="http://www.keyucourse.com/images/7.png" alt="">
+                        </div>
+                        <div class="couponInfo">
+                            <div class="infoLeft">
+                                <div class="name">Python基础语法</div>
+                                <ul>
+                                    <li>·全面学习Python编写所需语法</li>
+                                    <li>·快速掌握编程思维和编写技巧</li>
+                                    <li>·开始你的第一行人工智能代码</li>
+                                </ul>
+                            </div>
+                            <div class="infoRight">
+                                <div class="price">￥8.8 </div>
+                                <div class="originalPrice">￥350.00 </div>
+                                <a href="./course.html" class="btn btn-primary kyBtn">报名</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="couponItem">
+                        <div class="image">
+                            <img src="http://www.keyucourse.com/images/8.png" alt="">
+                        </div>
+                        <div class="couponInfo">
+                            <div class="infoLeft">
+                                <div class="name">跳槽及毕设Django高级实战教程 </div>
+                                <p>从实际需求分析开始，实现当今主流知识问答应用的功能，包括动态、文章、问答、私信、消息通知、搜索、个人中心，打造企业级知识问答网站http://www.keyucourse.com.</p>
+                            </div>
+                            <div class="infoRight">
+                                <div class="price">￥8.8 </div>
+                                <div class="originalPrice">￥350.00 </div>
+                                <button class="btn btn-primary kyBtn">报名</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="couponItem">
+                        <div class="image">
+                            <img src="http://www.keyucourse.com/images/9.png" alt="">
+                        </div>
+                        <div class="couponInfo">
+                            <div class="infoLeft">
+                                <div class="name">从零起步 系统入门Python爬虫工程师</div>
+                                <p>大数据时代，python爬虫工程师人才猛增，本课程专为爬虫工程师打造，课程有四个阶段，爬虫0基础入门->项目实战->爬虫难点突破->scrapy框架http://www.keyucourse.com.</p>
+                            </div>
+                            <div class="infoRight">
+                                <div class="price">￥8.8 </div>
+                                <div class="originalPrice">￥350.00 </div>
+                                <button class="btn btn-primary kyBtn">报名</button>
+                            </div>
+                        </div>
+                    </div>
+										<div class="couponItem">
+												<div class="image">
+														<img src="http://www.keyucourse.com/images/10.png" alt="">
+												</div>
+												<div class="couponInfo">
+														<div class="infoLeft">
+																<div class="name">Python服务端工程师就业面试指导</div>
+																<p>Python服务端工程师学什么，面试问什么，你该准备什么？别苦恼，别害怕，别纠结，这门课程带你系统梳理面试知识，增加面试成功几率，提升后端开发技能，在面试之前解决你的各种问题，让你技术实力和面试技巧得到双重提升</p>
+														</div>
+														<div class="infoRight">
+																<div class="price">￥8.8 </div>
+																<div class="originalPrice">￥350.00 </div>
+																<button class="btn btn-primary kyBtn">报名</button>
+														</div>
+												</div>
+										</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <p>粤ICP备XXXXXXXXXXX</p>
+                    <p class="copyright">Copyright © 2019 ForChange XXXXXX有限公司</p>
+                    <p>地址：广东省深圳市XXXXXXXXXXXXXXXXXXXX</p>
+                    <p>电话：XXXXXXXXXXXXXX</p>
+                    <p>电子邮箱：XXXXXXXXX</p>
+                </div>
+                <div class="col-md-6 col-sm-12 footerCode">
+                    <div class="code">
+                        <img src="http://www.keyucourse.com/images/mobile_code.png" alt="">
+                        <p>PC端</p>
+                    </div>
+                    <div class="code">
+                        <img src="http://www.keyucourse.com/images/mobile_code.png" alt="">
+                        <p>PC端</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- 登陆 -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">微信扫码登录</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="loginCode">
+                        <img id="wxLoginQrCode" src="http://www.keyucourse.com/images/mobile_code.png" alt="">
+                        <div class="agreement" id="agreement">
+                            <img  src="" alt="">
+                            <span>
+                已阅读并同意
+              </span>
+                            <a href="">
+                《科宇服务使用协议》
+              </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+		<div class="kefu">
+			<img src="http://www.keyucourse.com/images/kefu.png" >
+		</div>
+    
+</body>
+
+</html>
+<script>
+    var t;
+    $(function(){
+       var bannerList = configBannerList();
+       var indicatorsHtml = "";
+       var innerHtml = "";
+       for(var i=0; i<bannerList.length; i++){
+            var banner = bannerList[i];
+            if(i==0){
+                indicatorsHtml+='<li data-target="#demo" data-slide-to="'+i+'" class="active"></li>';
+                innerHtml +='<div class="carousel-item active">'+
+                        '<img  src="'+banner.pic+'" onclick="goToUrl(\''+banner.url+'\')">'+
+                        '</div>';
+            }else{
+                indicatorsHtml+='<li data-target="#demo" data-slide-to="'+i+'"></li>';
+                //innerHtml +='';
+                innerHtml +='<div class="carousel-item">'+
+                        '<img  src="'+banner.pic+'" onclick="goToUrl(\''+banner.url+'\')">'+
+                        '</div>';
+            }
+       }
+       $(".carousel-indicators").html(indicatorsHtml);
+       $(".carousel-inner").html(innerHtml);
+      
+    });
+    function wxLoginByQrCode(){
+        var uuid = getUuid();
+        //$("#wxLoginQrCode").src=wxLoginQrCodeUrl+"?uuid="+uuid;
+        $("#wxLoginQrCode").attr("src",wxLoginQrCodeUrl+"?uuid="+uuid);
+        
+        $("#exampleModalCenter").modal("show");
+        t = setInterval("autoLogin('"+uuid+"')", 1000);
+
+        
+    }
+    function autoLogin(uuid){
+        $.ajax({
+              type : "POST",
+              url :wxAutoLoginByUuidUrl,
+              async: false,
+              dataType: "json",
+              data :{"uuid":uuid} ,
+              success : function(data) {
+                 if(data.result=="success"){
+                   
+                    $("#agreement").html("登录成功");
+                    $("#exampleModalCenter").modal("hide");
+                    clearInterval(t);
+                    configKyUser();         
+                 }
+              }
+        });
+    }
+    function configBannerList(){
+        var bannerList = "";
+        $.ajax({
+              type : "POST",
+              url :bannerListUrl,
+              async: false,
+              dataType: "json",
+              data :{} ,
+              success : function(data) {
+                 bannerList = data;
+              }
+        });
+        return bannerList;
+    }
+    function goToUrl(url){
+        window.location.href=url;
+    }
+</script>

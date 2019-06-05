@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/user.css">
+    <link rel="stylesheet" href="../css/init.css">
+    <link href="//vjs.zencdn.net/4.10/video-js.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="http://www.keyucourse.com/js/jquery-3.3.1.min.js" >
+    </script>
+    <link href="http://vjs.zencdn.net/4.10/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/4.10/video.js"></script>
+    
+    <script src="http://www.keyucourse.com/js/config.js" >
+    </script>
+
+
+    <script src="http://www.keyucourse.com/js/jweixin-1.4.0.js" >
+    </script>
+    <script src="http://www.keyucourse.com/js/wx-app.js?1" >
+    </script>
+    <script src="http://www.keyucourse.com/js/common.js" >
+    </script>
+   
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo.png">
+    <title>科羽学院</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+            <div class="navLeft">
+            <img src="http://www.keyucourse.com/logo/logo.png" style="width:30px;height:30px;"/>
+            <a href="http://www.keyucourse.com">科羽学院</a>
+            </div>
+            <div class="navRight">
+            <button type="button" class="btn btn-outline-primary btn-sm loginBtn" data-toggle="modal"  onclick="wxLoginByQrCode()">登录</button>
+            <div class="dropdown" id="alreadyLogin">
+                <div class="dropdown-toggle" data-toggle="dropdown" id="kyUser">
+                    用户XXX
+                </div>
+                <div class="dropdown-menu">
+                    <!-- <a class="dropdown-item" href="#">退出</a> -->
+                    <a class="dropdown-item" href="./user.html">我的课程</a>
+                </div>
+            </div>
+            </div>
+            </nav>
+            <section class="userCard">
+                <div class="userHeadImage">
+                    <img src="../images/mobile_code.png" alt="">
+                </div>
+                <div class="userName">张雯宣 Mike</div>
+                <hr>
+                <p>当前课程：Python基础语法试学课-第0关 / 课堂：千寻的名字</p>
+                <!--<p>当前课程：Python基础语法试学课-第0关 / 课堂：千寻的名字</p> -->
+                <div class="userCardBtn">
+                    <button class="btn btn-primary kyBtn">继续学习</button>
+                </div>
+            </section>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="module">
+                <div class="moduleTitle"><span>我的课程 </span></div>
+                <div class="moudleContent" >
+                    
+                    <div class="row" id="myCourseList">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="itemContainer">
+                                <div class="itemImage">
+                                    <img src="../images/1.png" alt="">
+                                    <div class="studyProcess">
+										<div class="progress">
+											<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+										<div class="progressText">
+											<span>学习20%</span>
+										</div>
+									</div>
+                                </div>
+                                <div class="itemInfo">
+                                    <div class="infoLine">
+                                        <div class="name">Python基础语法</div>
+                                    </div>
+                                    <div class="desc">
+                                        适合零基础编程小白，敲下人生第一行代码，快速掌握编程思维和能力
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="module">
+                <div class="moduleTitle"><span>其他推荐</span></div>
+                <div class="moudleContent">
+                    <div class="row" id="recommandCourseList">
+                        
+                        
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+   
+</body>
+
+</html>
+<script>
+    $(function(){
+        configPersonCourseUI();
+        configUserUI();
+        configCommandCourseUI();
+    })
+    function configUserUI(){
+        kyUser = getKyUser();
+        $(".userCard img").attr("src", kyUser.headimgurl);
+        $(".userCard .userName").html(kyUser.nickName);
+
+    }
+
+    function configPersonCourseUI(){
+        var personCourseList = getPersonCourseList(); 
+        if(personCourseList == '' || personCourseList.length==0){
+           $(".userCard p").hide();
+           $(".userCard userCardBtn").hide();
+        }       
+        var html = '';
+        for(var i=0; i<personCourseList.length; i++){
+            
+            var cs = personCourseList[i];
+            if(i==0){
+               $(".userCard p").html(cs.name);
+            }
+            
+            
+            html += '<div class="col-md-4 col-sm-6">'+
+                        '<div class="itemContainer">'+
+                            '<div class="itemImage">'+
+                                '<img src="'+qiniuPicBuckertUrl+'//'+cs.pic+'" alt="">'+
+                                '<div class="studyProcess">'+
+                                    '<div class="progress">'+
+                                        '<div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="progressText">'+
+                                        '<span>学习20%</span>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                            '<div class="itemInfo">'+
+                                '<div class="infoLine">'+
+                                    '<div class="name">'+cs.name+'</div>'+
+                                '</div>'+
+                                '<div class="desc">'+
+                                    cs.resume+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>';
+        }
+
+        $("#myCourseList").html(html);
+    }
+    function configCommandCourseUI(){
+        var commandCourseList = getCommandCourseList();
+        var html = '';
+        for(var i=0; i<commandCourseList.length; i++){
+            var cs = commandCourseList[i];
+            html +='<div class="col-md-4 col-sm-6">'+
+                        '<div class="itemContainer">'+
+                            '<div class="itemImage">'+
+                                '<img src="../images/1.png" alt="">'+
+                            '</div>'+
+                            '<div class="itemInfo">'+
+                                '<div class="infoLine">'+
+                                    '<div class="name">'+cs.name+'</div>'+
+                                        '<button class="btn btn-primary btn-sm kyBtn"><a href="http://www.keyucourse.com/course.html?id="'+cs.id+'>报名</a></button>'+
+                                    '</div>'+
+                                    '<div class="sigIn">'+
+                                        '已报名人数：'+cs.studentNum+
+                                    '</div>'+
+                                    '<div class="infoPrice">'+
+                                        '<span class="price">￥'+cs.price+'</span>'+
+                                        '<span class="original">￥'+cs.originalPrice+'</span>'+
+                                        '<span class="coupon">立减'+(parseInt(cs.originalPrice)-parseInt(cs.price))+'</span>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>';
+                    
+        }
+        $("#recommandCourseList").html(html);
+    }
+
+    function getCommandCourseList(){
+        
+        var commandCourseList = '';
+        $.ajax({
+          type : "POST",
+          url :getRecommandUrl,
+          async: false,
+          dataType: "json",
+          data :{} ,
+          success : function(data) {
+            commandCourseList = data;
+          }
+        });
+
+        return commandCourseList;
+    }
+
+    function getPersonCourseList(){
+        var personCourseList = '';
+        $.ajax({
+          type : "POST",
+          url :getPersonCourseUrl,
+          async: false,
+          dataType: "json",
+          data :{} ,
+          success : function(data) {
+            personCourseList = data;
+          }
+        });
+        return personCourseList;
+    }
+</script>
