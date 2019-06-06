@@ -133,7 +133,7 @@ hr {
 	border-radius: 20px;
 	font-size: 12px;
 	line-height: 1;
-	color: #FFFFFF;	
+	color: #FFFFFF;
 }
 
 .studyProcess .progress{
@@ -182,5 +182,35 @@ hr {
     font-size: 12px;
 }
 
+.navLeft img {
+    width: 140px;
+}
+
+.dropdown-toggle img {
+  width: 45px;
+  border-radius: 50%;
+  margin-left: 5px
+}
+
+@media screen and (max-width:768px) {
+    .couponItem {
+        flex-direction: column;
+    }
+    .couponItem .couponInfo {
+        margin-left: 0;
+    }
+    .navLeft img {
+        width: 78px;
+    }
+    .btn.btn-sm {
+      padding: 0.1em 1em;
+      font-size: 12px;
+    }
+    .dropdown-toggle img {
+      width: 30px;
+      border-radius: 50%;
+      margin-left: 5px
+    }
+}
 
 /*  */

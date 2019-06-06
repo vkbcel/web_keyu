@@ -71,6 +71,8 @@ function configKyUser(){
 
 var t;
 function wxLoginByQrCode(){
+  console.log('asdas')
+  configWxLogin();
   var uuid = getUuid();
   //$("#wxLoginQrCode").src=wxLoginQrCodeUrl+"?uuid="+uuid;
   $("#wxLoginQrCode").attr("src",wxLoginQrCodeUrl+"?uuid="+uuid);
@@ -108,7 +110,6 @@ function autoLogin(uuid){
           data :{"uuid":uuid} ,
           success : function(data) {
              if(data.result=="success"){
-
                 $("#agreement").html("登录成功");
                 $("#exampleLoginCenter").modal("hide");
                 clearInterval(t);
@@ -134,3 +135,13 @@ function timestampDateFormat(shijianchuo)
     //return y+'-'+add0(m)+'-'+add0(d)+' '+add0(h)+':'+add0(mm)+':'+add0(s);
 }
 function add0(m){return m<10?'0'+m:m }
+
+
+function kyCheck(){
+    var checked = $("#ky_check").attr('data-check');
+    var qufan = ~checked + 2;
+    var check_map = {0: 'http://www.keyucourse.com/images/check_w.png', 1: 'http://www.keyucourse.com/images/check_y.png'};
+    $("#ky_check").attr('data-check', qufan);
+    $("#ky_check").attr('src', check_map[qufan]);
+    qufan ? $(".noLogin").hide() : $(".noLogin").show();
+}

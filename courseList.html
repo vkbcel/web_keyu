@@ -169,15 +169,20 @@
                     <h5 class="modal-title" id="exampleModalLongTitle">微信扫码登录</h5>
                 </div>
                 <div class="modal-body">
-                    <div class="loginCode" style="text-align: center;">
-                        <img id="wxLoginQrCode" src="http://www.keyucourse.com/images/mobile_code.png" alt="">
-                        <div class="agreement" id="agreement" >
-                            <img  src="" alt="">
+                    <div class="loginCode">
+                        <div class="wxCode">
+                          <img id="wxLoginQrCode" src="http://www.keyucourse.com/images/mobile_code.png" alt="">
+                          <span class="noLogin" style="display:none">
+                            同意协议后才可登录
+                          </span>
+                        </div>
+                        <div class="agreement" id="agreement">
+                            <img id="ky_check" src="http://www.keyucourse.com/images/check_y.png" data-check="1" onclick="kyCheck()">
                             <span>
                             已阅读并同意
                             </span>
                             <a href="">
-                            科宇服务使用协议》
+                            《科羽服务使用协议》
                             </a>
                         </div>
                     </div>

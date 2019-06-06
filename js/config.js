@@ -35,8 +35,12 @@ var wxPayQrCodeUrl = host+"/ky_api/qr_code/wx_generate";
 //支付宝二维码接口
 var aliPayQrCodeUrl = host + "/ky_api/qr_code/ali_generate";
 //获取个人所有课程
-var getPersonCourseUrl = host+"/ky_api/ky_user/my_course_list";
+var getPersonCourseUrl = host + "/ky_api/ky_user/my_course_list";
 //获取视频详情
-var getVideoDetailUrl = host+"/ky_api/video/getVideoDetail";
-//获取推荐课程
-var getRecommandUrl = host+"/ky_api/course/recommand";
+var getVideoDetailUrl = host + "/ky_api/video/getVideoDetail";
+//获取TOKEN
+var getAccessToken = host + "/ky_api/wx/access_token";
+//微信公众号登录
+var wxOfficialLoginUrl = host + '/cgi-bin/qrcode/create?access_token=';
+//微信公众号登陆获取二维码
+var wxTicketLoginUrl = host + '/cgi-bin/showqrcode?ticket='

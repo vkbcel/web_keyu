@@ -16,21 +16,14 @@
     </script>
 
 
-    <script src="http://www.keyucourse.com/js/common.js" >
-    </script>
-    <script src="http://www.keyucourse.com/js/config.js" >
-    </script>
+    <script src="http://www.keyucourse.com/js/common.js" ></script>
+    <script src="http://www.keyucourse.com/js/config.js" ></script>
 
-	<script src="http://www.keyucourse.com/js/jquery-3.3.1.min.js" >
-    </script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="http://www.keyucourse.com/js/jweixin-1.4.0.js" >
-    </script>
-    <script src="http://www.keyucourse.com/js/wx-app.js?1" >
-    </script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+	  <script src="http://www.keyucourse.com/js/jquery-3.3.1.min.js" ></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="http://www.keyucourse.com/js/jweixin-1.4.0.js" ></script>
+    <script src="http://www.keyucourse.com/js/wx-app.js?1" ></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/x-icon" href="http://www.keyucourse.com/logo/logo-2.png">
 
     <title>科羽学院</title>
@@ -146,6 +139,8 @@
                         <p>关注公众号</p>
                     </div>
                     <div class="code">
+
+
                         <img src="http://www.keyucourse.com/qrcode/xww.jpg" alt="">
                         <p>联系人</p>
                     </div>
@@ -162,14 +157,19 @@
                 </div>
                 <div class="modal-body">
                     <div class="loginCode">
-                        <img id="wxLoginQrCode" src="http://www.keyucourse.com/images/mobile_code.png" alt="">
+                        <div class="wxCode">
+                          <img id="wxLoginQrCode" src="http://www.keyucourse.com/images/mobile_code.png" alt="">
+                          <span class="noLogin" style="display:none">
+                            同意协议后才可登录
+                          </span>
+                        </div>
                         <div class="agreement" id="agreement">
-                            <img  src="" alt="">
+                            <img id="ky_check" src="http://www.keyucourse.com/images/check_y.png" data-check="1" onclick="kyCheck()">
                             <span>
                             已阅读并同意
                             </span>
                             <a href="">
-                            科宇服务使用协议》
+                            《科羽服务使用协议》
                             </a>
                         </div>
                     </div>
@@ -335,7 +335,7 @@
                         '</div>'+
                         '<div class="couponInfo">'+
                             '<div class="infoLeft">'+
-                                '<div class="name">'+course.name+'</div>'+
+                                '<div class="name"><h3>'+course.name+'</h3></div>'+
                                     resumeULHtml+
                             '</div>'+
                             '<div class="infoRight">'+
