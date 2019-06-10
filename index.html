@@ -21,7 +21,7 @@
     <script src="http://www.keyucourse.com/js/config.js" >
     </script>
 
-	<script src="http://www.keyucourse.com/js/jquery-3.3.1.min.js" >
+    <script src="http://www.keyucourse.com/js/jquery-3.3.1.min.js" >
     </script>
     <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
@@ -199,9 +199,9 @@
         </div><!-- /.modal -->
     </div>
 
-	 <div class="kefu" onclick="showKefu()">
-			<img src="http://www.keyucourse.com/images/kefu.png" >
-	 </div>
+     <div class="kefu" onclick="showKefu()">
+            <img src="http://www.keyucourse.com/images/kefu.png" >
+     </div>
     
 </body>
 
@@ -209,7 +209,6 @@
 <script>
     
     $(function(){
-
        var bannerList = configBannerList();
        var indicatorsHtml = "";
        var innerHtml = "";
@@ -230,7 +229,6 @@
        }
        $(".carousel-indicators").html(indicatorsHtml);
        $(".carousel-inner").html(innerHtml);
-
        configIndexCategoryListUI();
        //微信分享
        configWxShare();
@@ -254,7 +252,6 @@
     function goToUrl(url){
         window.location.href="http://"+url;
     }
-
     function configIndexCategoryListUI(){
         var html = '';
         var categoryList = getCategoryList();
@@ -266,7 +263,6 @@
             }
         }
         $("#categoryList").html(html);
-
     }
     function getCategoryList(){
         var categoryList = '';
@@ -285,7 +281,6 @@
         return categoryList;
     }
    
-
     function configCategoryHtml(category){
         var html ='';
         var courseList = categoryCourseList(category.id);
@@ -312,15 +307,12 @@
                 var c = '<div class="itemInfo">'+d+'</div>';
                 var b = '<div class="itemImage">'+
                             '<img src="'+qiniuPicBuckertUrl+'//'+course.pic+'" alt="">'+
-
                         '</div>';
                 var a = '<div class="itemContainer">'+b+c+'</div>';
                 t3 += '<div class="col-md-4 col-sm-6">'+a+'</div>';
             }
             var t4= '<div  class="row">'+t3+'</div>'
-
             var t5= '<div class="moudleContent">'+t4+'</div>';
-
             html +='<div class="module">'+t1+t5+'</div>';
             
         }else if(category.name=='近期优惠'){
@@ -371,7 +363,6 @@
         });
         return categoryCourseList;
     }
-
     function configWxShare(){
         var currentUrl = decodeURIComponent(location.href.split('#')[0]);
             //var url = host+"/ky_api/wx/get_signature";
@@ -397,15 +388,10 @@
                 var signature = data.signature;
                 var timestamp = data.timestamp;
                 var nonceStr = data.nonceStr;
-
                 var jsapi_ticket = data.jsapi_ticket;
-
                 var imgUrl = "http://www.keyucourse.com/logo/logo.png";
-
                 //分享朋友圈
                 var title = "科羽学院-全国大数据、人工智能在线教育平台";
-
-
                 wxShareFriendsCircle(appId, timestamp, nonceStr, signature, currentUrl, title, imgUrl);
                 //发给朋友
                 var title = "科羽学院";
@@ -415,7 +401,6 @@
           }
         });
     }
-
     function gotoCourse(id){
         window.location.href="http://www.keyucourse.com/course.html?id="+id;
     }

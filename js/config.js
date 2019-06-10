@@ -40,3 +40,5 @@ var getPersonCourseUrl = host+"/ky_api/ky_user/my_course_list";
 var getVideoDetailUrl = host+"/ky_api/video/getVideoDetail";
 //获取推荐课程
 var getRecommandUrl = host+"/ky_api/course/recommand";
+//获取access_token
+var getAccessToken = host+"/ky_api/wx/access_token";
