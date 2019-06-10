@@ -79,13 +79,13 @@ function wxLoginByQrCode(){
   $("#exampleLoginCenter").modal("show");
   t = setInterval("autoLogin('"+uuid+"')", 1000);
 }
-var courseList = '';
+var personCourseList = '';
 function getPersonCourseList(){
   //getPersonCourseUrl
-  if(courseList!=''){
-    return courseList;
+  if(personCourseList!=''){
+    return personCourseList;
   }
-  courseList = '';
+  personCourseList = '';
   $.ajax({
       type : "POST",
       url :getPersonCourseUrl,
@@ -93,10 +93,10 @@ function getPersonCourseList(){
       dataType: "json",
       data :{} ,
       success : function(data) {
-         courseList = data;
+         personCourseList = data;
       }
     });
-    return courseList;
+    return personCourseList;
 
 }
 
@@ -113,7 +113,13 @@ function autoLogin(uuid){
                 $("#agreement").html("登录成功");
                 $("#exampleLoginCenter").modal("hide");
                 clearInterval(t);
-                configKyUser();         
+                configKyUser();
+                //登录成功则加载课程
+                var currentUrl = window.location.href;
+                if(currentUrl.indexOf("course.html") != -1 || currentUrl.indexOf("courseList.html") != -1){
+                    configIsPayOrStudyUI(course);
+                }
+                         
              }
           }
     });

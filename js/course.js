@@ -5,6 +5,7 @@ function courseMulu(){
     window.location.href=host+"/courseList.html?id="+getParam("id");
 }
 var kyChapterList;
+
 function getCourseDetail(){
 	var course='';
 	var courseId = getParam("id");
@@ -91,11 +92,10 @@ function courseIsPay(courseId){
       }
     });
 }
-
+var currentCourseIsPay = 0;
 function configIsPayOrStudyUI(course){
 	kyUser = getKyUser();
 		//当前课程是否支付
-		var currentCourseIsPay = 0;
 		//如果用户没有登录
 		$("#payOrStartStudy").html("付款学习");
 		//如果用户登录了
@@ -149,53 +149,100 @@ function configIsPayOrStudyUI(course){
 }
 //视频播放
 function playVideoByModal(course){
+ 	//禁止出现下载按钮
  	$('#example_video_1').bind('contextmenu',function() { return false; });
+ 	
  	configCourseVideoModal(course);
 	$("#videoPlayModal").modal("show");
 }
 //配置视频播放
 var nextVideoId='';
-var kyChapterCurrentIndex = '';
-var kySectionCurrentIndex = '';
+var kyChapterCurrentIndex = 0;
+var kySectionCurrentIndex = 0;
 var kyChapter = '';
+var section = '';
+var sectionList = '';
 function configCourseVideoModal(course){
 	kyChapterList = course.kyChapterList;
-	kyChapter = kyChapterList[0];
-	var sectionList = kyChapter.kySectionList;
-	section = sectionList[0];
-	kyChapterCurrentIndex = 0;
-	kySectionCurrentIndex = 0;
+	kyChapter = kyChapterList[kyChapterCurrentIndex];
+	sectionList = kyChapter.kySectionList;
+	section = sectionList[kySectionCurrentIndex];
+	
 	//nextVideoId = section.videoId;
 	//播放课程
 	playNextCourseFun();
 	//下一节
-	section = sectionList[1];
-    if(section!= undefined){
-       $("#nextSectionTitle").html(section.name);
-       nextVideoId = section.videoId;
-    }else{
-    	//获取下一章节
-    	kyChapter = kyChapterList[1];
-    	kyChapterCurrentIndex = 1;
-    	kySectionCurrentIndex = 0;
-    	if(kyChapter!=undefined){
-    		sectionList = kyChapter.kySectionList;
-    		section = sectionList[0];
-    		$("#nextSectionTitle").html(section.name);
-    	}
-    }
+	
 	
 }
 function playNextCourseFun(){
 	//首先判断视频是否是付费
 	var isFree = section.isFree;
 	var videoId = section.videoId;
-	var video = getVideoDetail(videoId);
-	$("#chapter").html(kyChapter.name);
-	$(".sectionTitle").html(section.name);
-	//$("#playVideoSource").attr("src",video.mp4Name);
-	document.getElementById("example_video_1").src=video.mp4Name;
- 	document.getElementById("example_video_1").play();
+	//如果是免费
+	if(isFree==1){
+		playVideo(videoId);
+	}
+	//如果是收费
+	else{
+		//首先判断用户是否登录
+		
+		kyUser = getKyUser();
+		//如果用户未登录则提示用户登录
+		if(kyUser==''){
+			$("#exampleLoginCenter").modal("show");
+		}
+		//如果用户已经登录判断用户是否购买当前课程
+		else{
+
+			if(currentCourseIsPay){
+				playVideo(videoId);
+			}else{
+				$("#payModal").modal("show");
+			}
+		}
+		
+	}
+
+}
+
+function playVideo(videoId){
+		var video = getVideoDetail(videoId);
+		$("#chapter").html(kyChapter.name);
+
+		$("#currentSectionTitle").html(section.name);
+		//$("#playVideoSource").attr("src",video.mp4Name);
+		document.getElementById("example_video_1").src=video.mp4Name;
+ 		document.getElementById("example_video_1").play();
+ 		getNextCourseFun();
+}
+
+function getNextCourseFun(){
+	kySectionCurrentIndex = kySectionCurrentIndex+1;
+	section = sectionList[kySectionCurrentIndex];
+	var isFreeSectionHtml = '';
+    if(section!= undefined){
+    	if(currentCourseIsPay==0 && section.isFree==0){
+    		isFreeSectionHtml = '&nbsp&nbsp&nbsp&nbsp<span style="color:red;">收费</span>';
+    	}
+       
+       $("#nextSectionTitle").html(section.name+isFreeSectionHtml);
+       nextVideoId = section.videoId;
+    }else{
+    	//获取下一章节
+    	kyChapterCurrentIndex = kyChapterCurrentIndex+1;
+    	kyChapter = kyChapterList[kyChapterCurrentIndex];
+    	//kyChapterCurrentIndex = 1;
+    	kySectionCurrentIndex = 0;
+    	if(kyChapter!=undefined){
+    		sectionList = kyChapter.kySectionList;
+    		section = sectionList[kySectionCurrentIndex];
+    		if(currentCourseIsPay==0 && section.isFree==0){
+    			isFreeSectionHtml = '&nbsp&nbsp&nbsp&nbsp<span style="color:red;">收费</span>';
+    		}
+    		$("#nextSectionTitle").html(section.name);
+    	}
+    }
 }
 function getVideoDetail(videoId){
 	var video = '';

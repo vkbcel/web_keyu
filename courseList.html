@@ -140,7 +140,7 @@
 													<div class="course">
 															<div class="name">
 																<!-- <img src="../images/bf-xaod.png"  alt=""> -->
-																<span class="sectionTitle"></span>
+																<span class="sectionTitle" id="currentSectionTitle"></span>
 															</div>
 															<div class="statu">正在播放...</div>
 													</div>
@@ -220,7 +220,7 @@
 <script>
 	
 	$(function(){
-		var course = getCourseDetail();
+		course = getCourseDetail();
 		configCourseDetailUI(course);
 		configCourseItemUI(kyChapterList);
 		var title = course.name;
@@ -242,7 +242,7 @@
 				}
 				a += '<div class="sectionItem">'+
 								'<div class="sectionItemLeft">'+
-									'<img src="../images/bf-xd.png" >'+
+									'<img src="../images/bf-xd.png" style="cursor:pointer;" onclick="playCurrentVideo(\''+i+'\',\''+j+'\',\''+kySection.videoId+'\')" >'+
 									'<span>'+kySection.name+'</span>'+
 								'</div>'+
 								'<div class="sectionItemRight">'+
@@ -263,5 +263,11 @@
 					'</div>';
 		}
 		$("#courseList").html(html);
+	}
+	function playCurrentVideo(kyChapterIndex,kySectionIndex, videoId){
+		kyChapterCurrentIndex = parseInt(kyChapterIndex);
+		kySectionCurrentIndex = parseInt(kySectionIndex);
+		playVideoByModal(course);
+		//configCourseVideoModal(course);
 	}
 </script>
