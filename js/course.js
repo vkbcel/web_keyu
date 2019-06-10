@@ -151,22 +151,22 @@ function configIsPayOrStudyUI(course){
 function playVideoByModal(course){
  	//禁止出现下载按钮
  	$('#example_video_1').bind('contextmenu',function() { return false; });
- 	
+ 	$("#videoPlayModal").modal("show");
  	configCourseVideoModal(course);
-	$("#videoPlayModal").modal("show");
+	
 }
 //配置视频播放
 var nextVideoId='';
 var kyChapterCurrentIndex = 0;
 var kySectionCurrentIndex = 0;
 var kyChapter = '';
-var section = '';
+var currentSection = '';
 var sectionList = '';
 function configCourseVideoModal(course){
 	kyChapterList = course.kyChapterList;
 	kyChapter = kyChapterList[kyChapterCurrentIndex];
 	sectionList = kyChapter.kySectionList;
-	section = sectionList[kySectionCurrentIndex];
+	currentSection = sectionList[kySectionCurrentIndex];
 	
 	//nextVideoId = section.videoId;
 	//播放课程
@@ -177,8 +177,9 @@ function configCourseVideoModal(course){
 }
 function playNextCourseFun(){
 	//首先判断视频是否是付费
-	var isFree = section.isFree;
-	var videoId = section.videoId;
+	var isFree = currentSection.isFree;
+	var videoId = currentSection.videoId;
+	
 	//如果是免费
 	if(isFree==1){
 		playVideo(videoId);
@@ -210,24 +211,25 @@ function playVideo(videoId){
 		var video = getVideoDetail(videoId);
 		$("#chapter").html(kyChapter.name);
 
-		$("#currentSectionTitle").html(section.name);
+		$("#currentSectionTitle").html(currentSection.name);
 		//$("#playVideoSource").attr("src",video.mp4Name);
 		document.getElementById("example_video_1").src=video.mp4Name;
  		document.getElementById("example_video_1").play();
+ 		
  		getNextCourseFun();
 }
 
 function getNextCourseFun(){
 	kySectionCurrentIndex = kySectionCurrentIndex+1;
-	section = sectionList[kySectionCurrentIndex];
+	currentSection = sectionList[kySectionCurrentIndex];
 	var isFreeSectionHtml = '';
-    if(section!= undefined){
-    	if(currentCourseIsPay==0 && section.isFree==0){
+    if(currentSection!= undefined){
+    	if(currentCourseIsPay==0 && currentSection.isFree==0){
     		isFreeSectionHtml = '&nbsp&nbsp&nbsp&nbsp<span style="color:red;">收费</span>';
     	}
        
-       $("#nextSectionTitle").html(section.name+isFreeSectionHtml);
-       nextVideoId = section.videoId;
+       $("#nextSectionTitle").html(currentSection.name+isFreeSectionHtml);
+       nextVideoId = currentSection.videoId;
     }else{
     	//获取下一章节
     	kyChapterCurrentIndex = kyChapterCurrentIndex+1;
@@ -236,11 +238,11 @@ function getNextCourseFun(){
     	kySectionCurrentIndex = 0;
     	if(kyChapter!=undefined){
     		sectionList = kyChapter.kySectionList;
-    		section = sectionList[kySectionCurrentIndex];
-    		if(currentCourseIsPay==0 && section.isFree==0){
+    		currentSection = sectionList[kySectionCurrentIndex];
+    		if(currentCourseIsPay==0 && currentSection.isFree==0){
     			isFreeSectionHtml = '&nbsp&nbsp&nbsp&nbsp<span style="color:red;">收费</span>';
     		}
-    		$("#nextSectionTitle").html(section.name);
+    		$("#nextSectionTitle").html(currentSection.name);
     	}
     }
 }
